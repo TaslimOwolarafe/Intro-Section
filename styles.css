@@ -16,6 +16,7 @@
 }
 
 .navbar-toggle {
+    display: none;
     position: relative;
     z-index: 10000;
     background: hsl(0, 0%, 98%);
