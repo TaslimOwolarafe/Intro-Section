@@ -29,10 +29,14 @@ body {
 
 .navbar-toggle {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	display: none;
 =======
     display: none;
 >>>>>>> origin/master
+=======
+    display: none;
+>>>>>>> 5d69062c1efe17a417b8a0fe89b1af640cdf531b
     position: relative;
     z-index: 10000;
     background: hsl(0, 0%, 98%);
