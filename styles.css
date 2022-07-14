@@ -2,11 +2,23 @@
     margin: 0;
     font-family: 'Epilogue', sans-serif;
     background: hsl(0, 0%, 98%);
+	font-size: 15px;
+/* 	box-sizing: border-box; */
+}
+
+html, body {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	overflow: hidden;
 }
 
 .page-body {
     display: flex;
     flex-direction: column;
+	height: 100%;
 }
 
 .navbar {
@@ -16,6 +28,7 @@
 }
 
 .navbar-toggle {
+	display: none;
     position: relative;
     z-index: 10000;
     background: hsl(0, 0%, 98%);
@@ -122,7 +135,7 @@
     /* overflow: hidden; */
     padding: 10px 12px;
     background: #fff;
-    transition: all 0.6s;
+    transition: all 0.2s;
     box-shadow: 0px 0px 30px 0.3px hsl(0, 6%, 83%);
 }
 
@@ -232,7 +245,7 @@ a {
 .nav-btn {
     border: 1.3px solid hsl(0, 0%, 41%);
     border-radius: 10px;
-    margin-left: 0.5rem;
+/*     margin-left: 0.5rem; */
     cursor: pointer;
     margin-left: 15px;
     padding: 10px 10px;
@@ -360,7 +373,7 @@ h1 {
     
 }
 
-@media screen and (max-width: 945px) and (min-width: 889px){
+@media screen and (max-width: 945px) and (min-width: 750px){
     h1 {
         font-size: 3.2rem;
     }
@@ -423,40 +436,48 @@ h1 {
 
 @media screen and (max-width: 750px) {
     body {
-        overflow-x: hidden;
+        overflow: hidden;
     }
+
+	.page-body {
+		width: 100%;
+		height: 100%;
+		position: relative;
+/* 		overflow: hidden; */
+	}
 
     .navbar-toggle {
         background: hsl(0, 0%, 98%);
     }
     .side-nav {
         position: absolute;
-        /* z-index: -9999; */
+/*         z-index: -9999; */
         width: fit-content;
         display: block;
-        height: 80vh;
+        height: 100%;
         right: -500px;
         top: 0px;
-        padding: 60px 20px;
+        padding: 60px 20px 0;
         padding-left: 0;
         background: #fff;
-        transition: right 1s ease-in-out;
-        overflow: hidden;
+        transition: right 0.4s ease-in-out;
+        overflow-x: hidden;
+			overflow: hidden;
     }
 
     .side-nav.pop-up {
         position: absolute;
         z-index: 1000;
         display: block;
-        height: 80vh;
+        height: 100%;
         width: fit-content;
         right: 0;
         top: 0px;
-        padding: 60px 20px;
+        padding: 60px 20px 0;
         padding-left: 0;
         background: #fff;
         overflow: hidden;
-        transition: right 1s ease-in-out;
+        transition: right 0.4s ease-in-out;
     }
 
     .navbar-toggle {
@@ -466,6 +487,11 @@ h1 {
 
     .main-container {
         padding-right: 0;
+			display: flex;
+/* 			align-items: center; */
+			justify-content: center;
+			width: 100%;
+			
     }
 
     .main {
@@ -636,12 +662,25 @@ h1 {
     .hero {
         display: block;
     }
+
+	.side-nav {
+		height: 100%;
+	}
+	
     .hero img {
-        width: 360px;
+        width: 100%;
     }
+
+		.page-body {
+			width: 100%;
+			height: 100%;
+			position: relative;
+/* 			overflow: hidden; */
+		}
 
     .main {
         padding: 1rem 1rem;
+			height: fit-content;
     }
     
     .main-container-text {
@@ -649,19 +688,19 @@ h1 {
     }
 
     .main-container-header {
-        padding-top: 0;
+        padding: 0;
         margin: 20px 0;
         width: 100%;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2em;
     }
 
     .main-text {
         display: block;
         padding-right: 0;
-        padding: 0 7px;
+      padding: 0 7px;
     }
 
     .content {
@@ -673,6 +712,89 @@ h1 {
         background: #000;
         padding: 12px 1rem;
         transition: background 0.6s, color 0.6s;
+    }
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .hero {
+        display: block;
+    }
+	
+    .hero img {
+        width: 100%;
+    }
+	.body {
+		overflow-y: hidden;
+	}
+	
+	.side-nav {
+		height: 100%;
+		padding-bottom: 0;
+	}
+
+	.side-nav.pop-up {
+		height: 100%;
+		padding-bottom: 0;
+		overflow: hidden;
+	}
+
+		.page-body {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow-x: hidden;
+			box-sizing: border-box;
+		}
+
+    .main {
+        padding: 1.6rem 0 0;
+			margin-top: 8px;
+    }
+    
+    .main-container-text {
+        padding: 0 1rem;
+    }
+
+    .main-container-header {
+        padding: 0;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.6em;
+    }
+
+    .main-text {
+        display: block;
+        padding-right: 0;
+      padding: 0 7px;
+    }
+
+    .content {
+        line-height: 1.8;
+			font-size: 1em;
+    }
+	
+	.main-footer {
+		justify-content: space-between;
+		width: 100%;	
+	}
+	
+	.footer-wrap {
+		padding: 0 12px;
+		display: flex;
+	  justify-content: center;
+		box-sizing: border-box;
+		width : 100%;
+	
+	}
+	
+	.footer-logo img {
+        width: 5em;
     }
 
 
