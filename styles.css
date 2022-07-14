@@ -28,7 +28,11 @@ body {
 }
 
 .navbar-toggle {
+<<<<<<< HEAD
 	display: none;
+=======
+    display: none;
+>>>>>>> origin/master
     position: relative;
     z-index: 10000;
     background: hsl(0, 0%, 98%);
